@@ -1,0 +1,11 @@
+@startuml
+note as TITLE
+Structural Design Patterns
+--**Page-Object Model**--
+[[https://www.devbridge.com/articles/top-design-pattern-test-automation-frameworks/]]
+
+Abstracting Page or Page snippets from the actual tests
+end note
+
+
+@enduml
