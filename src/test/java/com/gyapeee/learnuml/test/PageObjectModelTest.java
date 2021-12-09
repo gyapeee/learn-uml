@@ -1,4 +1,4 @@
-package com.gyapeee.learnuml;
+package com.gyapeee.learnuml.test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
