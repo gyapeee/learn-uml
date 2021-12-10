@@ -34,10 +34,11 @@ public class UserRepositoryTest {
         user.setPassword("learnuml");
         user.setFirstName("d");
         user.setLastName("k");
+//        user.setId(0l);
 
         User savedUser = userRepository.save(user);
         User readUser = entityManager.find(User.class, savedUser.getId());
 
-        Assertions.assertEquals(user, readUser);
+        Assertions.assertEquals(user.getEmail(), readUser.getEmail());
     }
 }

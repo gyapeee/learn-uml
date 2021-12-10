@@ -2,7 +2,8 @@ server:
   port: 8081
 spring:
   datasource:
-    url: jdbc:h2:file:/data/learnumldb
+    #    url: jdbc:h2:file:~/data/learnumldb
+    url: jdbc:h2:mem:learnumldb
     username: sa
     password: password
     driverClassName: org.h2.Driver
@@ -12,6 +13,7 @@ spring:
       enabled: true
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
     hibernate:
       ddl-auto: none
     defer-datasource-initialization: true
