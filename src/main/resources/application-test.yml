@@ -1,0 +1,6 @@
+server:
+  port: 8082
+spring:
+  datasource:
+    #    url: jdbc:h2:file:~/data/learnumldb
+    url: jdbc:h2:mem:learnumldb

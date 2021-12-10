@@ -9,8 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 
 @ExtendWith(SpringExtension.class)
@@ -19,7 +22,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @TestPropertySource(properties =
         {"spring.jpa.hibernate.ddl-auto=create-drop",
                 "spring.datasource.initialization-mode=always"})
-//@Rollback(value = false)
+@ActiveProfiles("test")
 public class UserRepositoryTest {
     @Autowired
     private TestEntityManager entityManager;
@@ -40,5 +43,9 @@ public class UserRepositoryTest {
         User readUser = entityManager.find(User.class, savedUser.getId());
 
         Assertions.assertEquals(user.getEmail(), readUser.getEmail());
+        assertThat(user.getFirstName()).isEqualTo(readUser.getFirstName());
+        assertThat(user.getLastName()).isEqualTo(readUser.getLastName());
+        assertThat(user.getPassword()).isEqualTo(readUser.getPassword());
+        assertThat(user.getId()).isEqualTo(readUser.getId());
     }
 }
