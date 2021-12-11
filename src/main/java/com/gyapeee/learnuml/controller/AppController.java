@@ -3,6 +3,7 @@ package com.gyapeee.learnuml.controller;
 import com.gyapeee.learnuml.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
@@ -12,7 +13,8 @@ public class AppController {
     private UserRepository userRepository;
 
     @GetMapping("/")
-    public String viewHomePage() {
+    public String viewHomePage(Model model) {
+        model.addAttribute("testdata", "This is the test data from Controller");
         return "index";
     }
 }
