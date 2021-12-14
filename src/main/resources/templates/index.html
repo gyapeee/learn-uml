@@ -5,21 +5,72 @@
     <title>Welcome to Learn UML Home</title>
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css"/>
     <!--   https://www.webjars.org/documentation#springmvc -->
-    <!--    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"/>-->
-    <!--    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"/>-->
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
 <div>
     <h1>Welcome to Gyapeee's tutorial</h1>
     <div th:text="${testdata}">hy</div>
-    <div>Is this a code lien?
+    <pre>
+<!--    <code>-->
+
+        public class SwapNumbers {
+
+        public static void main(String[] args) {
+
+        float first = 1.20f, second = 2.45f;
+
+        System.out.println("--Before swap--");
+        System.out.println("First number = " + first);
+        System.out.println("Second number = " + second);
+
+        // Value of first is assigned to temporary
+        float temporary = first;
+
+        // Value of second is assigned to first
+        first = second;
+
+        // Value of temporary (which contains the initial value of first) is assigned to second
+        second = temporary;
+
+        System.out.println("--After swap--");
+        System.out.println("First number = " + first);
+        System.out.println("Second number = " + second);
+        }
+        }
         <!--<span class="glyphicon glyphicon-sunglasses" aria-hidden="true"></span>-->
-    </div>
-    <button type="button" class="btn btn-primary">Is this a bootstrap btn?</button>
+
+        <!--    </code>-->
+                    </pre>
+    <button type="button"
+            class="btn btn-primary"
+            data-bs-toggle="tooltip"
+            title="Is this bootstrap">Is this a bootstrap btn??
+    </button>
 
     <!--    <h3><a th:href="/@{/users}">List of Users</a></h3>-->
     <!--    <h3><a th:href="/@{/register}">Register</a></h3>-->
     <!--    <h3><a th:href="/@{/login}"></a></h3>-->
 </div>
+
+<script type="text/javascript">
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+          return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
 </body>
 </html>

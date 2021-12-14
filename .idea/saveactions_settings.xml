@@ -5,8 +5,10 @@
       <set>
         <option value="activate" />
         <option value="activateOnShortcut" />
+        <option value="activateOnBatch" />
         <option value="organizeImports" />
         <option value="reformat" />
+        <option value="compile" />
         <option value="useBlocks" />
         <option value="unnecessaryThis" />
         <option value="unnecessarySemicolon" />
