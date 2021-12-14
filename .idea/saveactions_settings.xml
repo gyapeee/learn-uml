@@ -8,7 +8,7 @@
         <option value="activateOnBatch" />
         <option value="organizeImports" />
         <option value="reformat" />
-        <option value="compile" />
+        <option value="reload" />
         <option value="useBlocks" />
         <option value="unnecessaryThis" />
         <option value="unnecessarySemicolon" />
