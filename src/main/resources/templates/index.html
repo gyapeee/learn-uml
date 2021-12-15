@@ -17,27 +17,41 @@
 <body>
 <div>
     <h1>Welcome to Gyapeee's tutorial</h1>
-    <div th:text="${testdata}">hy</div>
-    <pre>
-    <code class="language-java" th:text="${code}">
-without code from controller
-        <!--<span class="glyphicon glyphicon-sunglasses" aria-hidden="true"></span>-->
-
-    </code>
-    </pre>
-    <div>This is the output:</div>
-    <pre class="command-line language-powershell"
-         data-prompt="PS C:\Projects\learn-uml>"
-    ><code>
-"C:\Program Files\AdoptOpenJDK\jdk-8.0.282.8-hotspot\bin\java.exe" Main
-red
-green
-    </code></pre>
+    <div th:text="${dummy}"></div>
     <button type="button"
             class="btn btn-primary"
-            data-bs-toggle="tooltip"
-            title="Is this bootstrap">Is this a bootstrap btn??
+            data-bs-toggle="collapse"
+            data-bs-target=".collapse"
+            aria-expanded="false"
+            aria-controls="collapse1 collapse2">
+        <span title="Is this bootstrap"
+              data-bs-toggle="tooltip">
+        Show me the code
+        </span>
+        <!--        <span class=" glyphicon glyphicon-sunglasses" aria-hidden="true"></span>-->
     </button>
+    <div id="collapse1"
+         class="collapse
+         card card-body
+         p-2 m-2">
+        <pre>
+            <code class="language-java"
+                  th:text="${code}">
+No data from controller
+            </code>
+        </pre>
+    </div>
+    <div id="collapse2"
+         class="collapse
+         card card-body
+         p-2 m-2">
+        The output:
+        <pre class="command-line language-powershell">
+            <code th:text="${output}">
+No data from controller
+            </code>
+        </pre>
+    </div>
 
     <!--    <h3><a th:href="/@{/users}">List of Users</a></h3>-->
     <!--    <h3><a th:href="/@{/register}">Register</a></h3>-->
@@ -45,54 +59,13 @@ green
 </div>
 
 <!-- Init tooltips -->
-<script>
+<script type="text/javascript">
         var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
         var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
           return new bootstrap.Tooltip(tooltipTriggerEl)
-        })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        }
+        )
 
 </script>
-<!--&lt;!&ndash; Initialize highlight &ndash;&gt;-->
-<!--<script>hljs.initHighlightingOnLoad();</script>-->
-
 </body>
 </html>
