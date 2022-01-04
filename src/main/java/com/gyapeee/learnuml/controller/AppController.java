@@ -40,4 +40,9 @@ public class AppController {
 //        logger.error("Passing the model to the frontend: \n" + model);
         return "index";
     }
+
+    @GetMapping("/login")
+    public String viewLoginPage(Model model) {
+        return "login";
+    }
 }
